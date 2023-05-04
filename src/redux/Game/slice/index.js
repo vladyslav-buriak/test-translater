@@ -1,6 +1,5 @@
 import { createSlice } from '@reduxjs/toolkit'
 import { fetchWord } from '../asyncActions';
-import translate from 'translate-google-api';
 
 const initialState = {
     questions: [
@@ -19,9 +18,9 @@ const initialState = {
             variants: ["ледачий", "веселий", "добрий"],
             match: "добрий",
         },
-       
+
     ],
-    translate:"",
+    translate: "",
     step: 0,
 
 }
@@ -43,22 +42,22 @@ export const gameSlice = createSlice({
     },
     extraReducers: (builder) => {
         builder.addCase(fetchWord.pending, (state, action) => {
-          state.translate = "";
+            state.translate = "";
         });
         builder.addCase(
             fetchWord.fulfilled,
             (state, action) => {
-              state.translate = action.payload;
-              
+                state.translate = action.payload;
+
             }
-          );
-          builder.addCase(fetchWord.rejected, (state, action) => {
-           
+        );
+        builder.addCase(fetchWord.rejected, (state, action) => {
+
             state.pizzasItem = "";
-          });
+        });
 
     },
-    
+
 });
 
 

@@ -15,10 +15,10 @@ const MyProgress = () => {
                 </div>
 
                 <div
-                className="my-progress__content">
+                    className="my-progress__content">
                     <p> Кількість запитань</p>
                     <p className="my-progress__text">{questions.length}</p>
-                   
+
                 </div>
             </div>)}
 
