@@ -53,7 +53,7 @@ export const gameSlice = createSlice({
         );
         builder.addCase(fetchWord.rejected, (state, action) => {
 
-            state.pizzasItem = "";
+            state.fetchWord = "";
         });
 
     },
